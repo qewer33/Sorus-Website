@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorus Client</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/box.css">
+    <link rel="stylesheet" href="css/slideshow.css">
+    <link rel="stylesheet" href="css/download.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+        * {
+            font-family: 'Raleway', sans-serif;
+            font-feature-settings: 'lnum' 1;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="nav-disabler" onclick="disablerClick();" class="nav-panel-disabler"></div>
+
+    <header class="navbar">
+
+        <div class="nav-logo-cont noselect">
+            <img src="media/sorus_dark.png" class="nav-logo" alt="">
+            <div class="nav-title">
+                Sorus
+            </div>
+        </div>
+
+        <div class="nav-button-cont noselect">
+            <ul id="nav-button-ul" class="nav-button-ul">
+                <li id="old_nav">
+                    <a href="#">Home</a>
+                </li>
+                <li id="old_nav">
+                    <a href="#slide">About</a>
+                </li>
+                <li id="old_nav">
+                    <a href="#download">Download</a>
+                </li>
+                <li class="nav-button-ul-res-3-lines">
+                    <a onclick="toggleNavPanel();">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="nav-panel" class="nav-res noselect">
+            <div class="nav-res-popout">
+                <div class="nav-res-title">Sorus</div>
+                <ul class="nav-button-ul-res">
+
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#slide">About</a>
+                    </li>
+                    <li>
+                        <a href="#download">Download</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+    </header>
+
+
+    <div class="parent">
+        <div class="child page-1">
+            <a class="download-button noselect" href="#download" >download</a>
+        </div>
+        <div class="child noselect">
+
+            <a id="slide" style="display: block;position: relative;top: -535px;visibility: hidden;"></a>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <img class="slide-img" src="media/slide1.png" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img class="slide-img" src="media/slide2.png" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img class="slide-img" src="media/slide3.png" style="width:100%">
+                </div>
+                
+                <a id="changeSlide" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a id="changeSlide" class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <br>
+                <br>
+                
+            </div>
+                
+                <script>
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        if (n > slides.length) {
+                            slideIndex = 1;
+                        }    
+                        if (n < 1) {
+                            slideIndex = slides.length;
+                        }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                        }
+                        slides[slideIndex-1].style.display = "block";  
+                    }
+                    
+                </script>
+        </div>
+        <div class="child download-area noselect">
+            <a id="download" style="display: block;position: relative;top: -535px;visibility: hidden;"></a>
+            <div class="card-cont">
+                <div class="card">
+                    <img class="card-image" src="media/installer.png" alt="">
+                    <div class="card-title">Installer</div>
+                    <div class="card-content">A 1 click installer for people who can't run the launcher</div>
+                    <button id="card-button" class="card-button">DOWNLOAD</button>
+                </div>
+                <div class="card card-suggested">
+                    <img class="card-image-a" src="media/launcher.jpg" alt="">
+                    <div class="card-title">LAUNCHER</div>
+                    <div class="card-content">Launcher to launch different versions of Sorus, along with an auto updater</div>
+                    <button id="card-button" class="card-button">DOWNLOAD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-card-container">
+          <div class="footer-card">
+            <h1>Links:</h1>
+            <ul>
+              <li><a style="color:rgb(75, 75, 75);" href="https://github.com/SorusClient/Sorus-Client">GitHub Repository for Client</a></li>
+              <li><a style="color:rgb(75, 75, 75);" href="https://github.com/SorusClient/Sorus-Installer">Github Repository for Installer</a></li>
+            </ul>
+          </div>
+          <div class="footer-card">
+            <h1>Thanks To:</h1>
+            <ul>
+              <li>Danterus (Danterus#5291) For creating this project</li>
+              <li>Hot Tutorials (Hot Tutorials#8262) For contributing to the project along with making this site</li>
+              <li>Qewer (Qewer#3227) For redesigning the installer</li>
+            </ul>
+          </div>
+          <div class="footer-card">
+            <h1>License</h1>
+            <a style="color:rgb(75, 75, 75);" href="https://raw.githubusercontent.com/SorusClient/Sorus-Client/master/LICENSE">Click to view license</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function toggleNavPanel() {
+            const panel = document.getElementById("nav-panel");
+            const nav = document.getElementById("nav-button-ul");
+            const disabler = document.getElementById("nav-disabler");
+            
+            if(panel.style.display == "none" && nav.style.display == "flex") {
+                panel.style.display = "block";
+                nav.style.display = "none";
+                disabler.style.display = "block";
+            } else {
+                panel.style.display = "none";
+                nav.style.display = "flex"; 
+            }
+        }
+
+        function disablerClick() {
+            const disabler = document.getElementById("nav-disabler");
+
+            disabler.style.display = "none";
+            toggleNavPanel();
+        }
+
+    </script>
+
+</body>
+</html>

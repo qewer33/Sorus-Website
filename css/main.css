@@ -1,0 +1,79 @@
+:root {
+    --primary-bg: rgb(18, 18, 18);
+    --secondary-bg:rgb(30,30,30);
+    --button-hovered-color:  rgb(112, 255, 120);
+
+    --text-color: rgb(40,40,40);
+
+    --primary-overlay: rgb();
+
+    --navbar-height: 100px;
+}
+
+body {
+    background-color: var(--primary-bg);
+    margin: 0px;
+    padding: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+}
+   
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255, 0.3); 
+    border-radius: 500px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255, 0.5);
+}
+
+.download-button {
+    border-radius: 5px;
+    outline: none;
+    background-color: rgb(67, 158, 71);
+    border:none;
+    padding: 10px;
+    font-weight: 650;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-size: 50px;
+    padding-left: 25px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 25px rgb(67, 158, 71);
+    text-decoration: none;
+}
+
+.download-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .download-button {
+        font-size: 5vw;
+    }
+} 

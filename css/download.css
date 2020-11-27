@@ -1,0 +1,132 @@
+.card-cont {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    background: white;
+    border-radius: 20px;
+    transition: 0.3s;
+    color: var(--text-color);
+    overflow: hidden;
+    min-width: 20vw;
+    min-height: 60vh;
+    width: 25vw;
+    height: 70vh;
+    max-width: 30vw;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    flex-basis: inherit;
+    position: relative;
+}
+
+@media only screen and (max-width: 800px) {
+    .card {
+        margin-right: 25px;
+        margin-left: 25px;
+        min-width: 30vw;
+        min-height: 40vh;
+        width: 70vw;
+        height: 50vh;
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+    .download-area {
+        height: calc(100vh + 50vh);
+    }
+}
+
+
+.card-image {
+    width: 110%;
+    height: 60%;
+    border-radius: 20px 20px 0 0;
+    object-position: 10% 40%;
+    object-fit: cover;
+    position: relative;
+    left: -5px;
+    top: -5px;
+    background-color: #000;
+}
+
+.card-image-a {
+    width: 110%;
+    height: 60%;
+    border-radius: 20px 20px 0 0;
+    object-position: 10% 40%;
+    object-fit: cover;
+    position: relative;
+    left: -5px;
+    top: -5px;
+    background-color: #000;
+    object-fit: cover;
+    object-position: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 25px white;
+}
+
+.card-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.card-content {
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    margin: 5px;
+    min-width: 0;
+}
+
+.card-button {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background:rgb(67, 158, 71);
+    padding: 10px 20px 10px 20px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 5px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.3s all;
+    text-align: center;
+}
+
+.card-button:hover {
+    padding: 20px 30px 20px 30px;
+    bottom: 5px;
+    background:rgb(60, 138, 64);
+    cursor: pointer;
+}
+
+.card-button:disabled {
+    background:rgb(158, 67, 67);
+}
+
+@media only screen and (max-width: 700px) {
+    .card-button {
+        display: none;
+    }
+}
+
